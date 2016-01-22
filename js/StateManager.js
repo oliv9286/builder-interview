@@ -18,6 +18,7 @@ RACEGAME.StateManager.prototype = {
 	},
 
 	setFinish: function() {
+		$(".state").hide();
 		$("#timer").hide();
 		$("#finish-menu").fadeIn();
 	}

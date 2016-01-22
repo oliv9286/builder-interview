@@ -22,7 +22,6 @@ RACEGAME.Game.prototype = {
     **/
     addKeypressListener: function() {
         var _this = this;
-
         var down = {};
 
         $(document).keydown(function(event) {

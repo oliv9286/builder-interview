@@ -1,46 +1,50 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Monstro Race</title>
-		<link rel="stylesheet" href="carrace.css">
-	</head>
-	<body>
+  <head>
+    <title>Monstro Race</title>
+    <link rel="stylesheet" href="carrace.css">
+  </head>
+  <body>
 
-	<div id="start-menu" class="state center">
-		<h1>Monstro Race</h1>
-		
-		<p>Once upon a time, in a galaxy far far away...</p>
-		<p>monsters got too bored of eating people, and decided to race each other for fun</p>
-		<p>Player 1&mdash;Mr.Blob press "A" key to accelerate</p>
-		<p>Player 2&mdash;Mr.Chunky press "L" key to accelerate</p>
+  <!--  Start Menu -->
+  <div id="start-menu" class="state center">
+    <h1>Monstro Race</h1>
+    
+    <p>Once upon a time, in a galaxy far far away...</p>
+    <p>monsters got too bored of eating people, and decided to race each other for fun</p>
+    <p>Player 1&mdash;Mr.Blob press "A" key to accelerate</p>
+    <p>Player 2&mdash;Mr.Chunky press "L" key to accelerate</p>
 
-		<a class="button" id="start-game">START</a>
-	</div>
+    <a class="button" id="start-game">START</a>
+  </div>
 
-	<div id="timer" class="timer"></div>
+  <!--  Countdown Timer -->
+  <div id="timer" class="timer"></div>
 
-	<div id="game" class="state">
-		<div class="car car-one">
-			<span class="name">Mr.Blob</span>
-		</div>
-		<div class="car car-two">
-			<span class="name">Mr.Chunky</span>
-		</div>
+  <!--  Main Game -->
+  <div id="game" class="state">
+    <div class="car car-one">
+      <span class="name">Mr.Blob</span>
+    </div>
+    <div class="car car-two">
+      <span class="name">Mr.Chunky</span>
+    </div>
 
-		<div id="finish-line" class="finish-line"></div>
-	</div>
+    <div id="finish-line" class="finish-line"></div>
+  </div>
 
-	<div id="finish-menu" class="state center finish-menu">
-		<h1>GAME OVER</h1>
-		<p id="winner"></p>
+  <!--  End Game Menu -->
+  <div id="finish-menu" class="state center finish-menu">
+    <h1>GAME OVER</h1>
+    <p id="winner"></p>
 
-		<a class="button" id="restart">PLAY AGAIN</a>
-	</div>
+    <a class="button" id="restart">PLAY AGAIN</a>
+  </div>
 
-	<script src="jquery-1.12.0.js"></script>
-	<script src="car.js"></script>
-	<script src="game.js"></script>
-	<script src="stateManager.js"></script>
-	<script src="main.js"></script>
-	</body>
+  <script src="js/jquery-1.12.0.js"></script>
+  <script src="js/Car.js"></script>
+  <script src="js/Game.js"></script>
+  <script src="js/StateManager.js"></script>
+  <script src="js/Main.js"></script>
+  </body>
 </html>

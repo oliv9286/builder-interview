@@ -23,5 +23,11 @@ RACEGAME.Car.prototype = {
     **/
     getName: function() {
         return this.name;
+    },
+
+    /** returns car's DOM element
+    **/
+    getEntity: function() {
+        return this.entity;
     }
 };
