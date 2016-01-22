@@ -4,6 +4,9 @@ Monstro Race
 
 --code and artwork by Olivia Zhang 2016--
 
+To start game:
+- open index.html in the browser
+
 Requirements
 - this game is intended to be controlled by 2 players
 - player 1 controls character Mr.Blob using key "A"
