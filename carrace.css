@@ -1,0 +1,29 @@
+body {
+	font-family: "Helvetica Neue", "Helvetica", Sans-serif;
+	color: #555555;
+}
+
+.center {
+	text-align: center;
+}
+
+.car {
+	width: 80px;
+	height: 30px;
+
+	position: absolute;
+}
+
+.car-one {
+	background-color: blue;
+	top: 30%;
+}
+
+.car-two {
+	background-color: salmon;
+	top: 50%;
+}
+
+#game {
+	display: none;
+}
