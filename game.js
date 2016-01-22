@@ -18,15 +18,27 @@ RACEGAME.Game.prototype = {
 
 	addKeypressListener: function() {
 		var _this = this;
-		$(document).keypress(function(event) {
-			if (event.which === 97) { // A pressed
+
+		var down = {};
+
+		$(document).keydown(function(event) {
+
+			var keycode = event.keyCode ? event.keyCode : event.which;
+			if (keycode === 65 && down[65] === null) { // A pressed
 				_this.car1.move();
+				down[65] = true;
 			}
-			if (event.which === 108) { // L pressed
+			if (keycode === 76 && down[76] === null) { // L pressed
 				_this.car2.move();
+				down[76] = true;
 			}
 
 			_this.update();
+		});
+
+		$(document).keyup(function(event) {
+			var keycode = event.keyCode ? event.keyCode : event.which;
+			down[keycode] = null;
 		});
 	},
 
@@ -70,7 +82,8 @@ RACEGAME.Game.prototype = {
 	// sets state to finished, loads winning screen
 	finish: function(winner) {
 
-		$(document).off("keypress");
+		$(document).off("keydown");
+		$(document).off("keyup");
 
 		if (winner) {
 			$("#winner").text("Congratulations to " + winner.getName() + " on winning the race!");
