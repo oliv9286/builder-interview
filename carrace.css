@@ -23,27 +23,42 @@ body {
 
 .car {
 	width: 80px;
-	height: 30px;
+	height: 90px;
 
 	position: absolute;
 }
 
 .car-one {
-	background-color: blue;
 	top: 200px;
+	background-image: url("assets/mrblob.png");
+	background-position: 100% 50%;
 }
 
 .car-two {
-	background-color: salmon;
+	background-image: url("assets/mrchunky.png");
+	background-position: 100% 50%;
 	top: 400px;
 }
 
-.finish-line {
-	width: 5px;
-	height: 500px;
-	background-color: #777777;
+.name {
 	position: absolute;
-	top: 50px;
+	bottom: -15px;
+}
+
+.finish-menu {
+	width: 50%;
+	margin: auto;
+	margin-top: 30%;
+	background-color: #e2a525;
+	padding: 10px;
+}
+
+.finish-line {
+	width: 10px;
+	height: 400px;
+	background-image: url("assets/finishline.png");
+	position: absolute;
+	top: 140px;
 	right: 80px;
 }
 
@@ -51,7 +66,3 @@ body {
 	font-size: 92px;
 	text-align: center;
 }
-
-/*#game {
-	display: none;
-}*/
