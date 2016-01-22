@@ -1,44 +1,47 @@
 var RACEGAME = RACEGAME || {};
 
-var gamestate = ["waiting", "in progress", "finished"];
 
-RACEGAME.Game = function(car1Elem, car2Elem) {
+RACEGAME.Game = function(car1Elem, car2Elem, stateManager) {
 
 	this.car1 = new RACEGAME.Car(car1Elem, "Mr. Blob");
 	this.car2 = new RACEGAME.Car(car2Elem, "Mr. Chunky");
-
-	this.state = gamestate[0];
+	this.stateManager = stateManager;
 };
 
 RACEGAME.Game.prototype = {
 
 	//instantiates cars, sets up state
 	start: function() {
-		var self = this;
+		this.stateManager.setGame();
 		this.countdown(3);
+	},
 
+	addKeypressListener: function() {
+		var _this = this;
 		$(document).keypress(function(event) {
 			if (event.which === 97) { // A pressed
-				self.car1.move();
+				_this.car1.move();
 			}
-			if (event.which === 108) {
-				self.car2.move();
+			if (event.which === 108) { // L pressed
+				_this.car2.move();
 			}
 
-			self.update();
+			_this.update();
 		});
 	},
 
 	// displays timer counts down to 3
 	countdown: function(count) {
+		var _this = this;
+
 		var counter = setInterval(function() {
-			if (count <= 0) {
+			if (count < 0) {
 				clearInterval(counter);
-				$("#start-menu").hide();
+				_this.addKeypressListener();
 				return;
 			}
 
-			$("#timer").html(count);
+			$("#timer").html(count === 0 ? "GO!" : count);
 			count -= 1;
 		}, 1000);
 	},
@@ -67,6 +70,16 @@ RACEGAME.Game.prototype = {
 	// sets state to finished, loads winning screen
 	finish: function(winner) {
 
+		$(document).off("keypress");
+
+		if (winner) {
+			$("#winner").text("Congratulations to " + winner.getName() + " on winning the race!");
+		}
+		else {
+			$("#winner").text("Looks like we have a draw!");
+		}
+
+		this.stateManager.setFinish();
 	}
 
 };

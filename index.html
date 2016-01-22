@@ -6,7 +6,7 @@
 	</head>
 	<body>
 
-	<div id="start-menu" class="center">
+	<div id="start-menu" class="state center">
 		<h1>Monstro Race</h1>
 		
 		<p>Once upon a time, in a galaxy far far away...</p>
@@ -14,26 +14,27 @@
 		<p>Player 1&mdash;Mr.Blob press "A" key to accelerate</p>
 		<p>Player 2&mdash;Mr.Chunky press "L" key to accelerate</p>
 
-		<button type="button" id="start-game"><strong>START</strong></button>
+		<a class="button" id="start-game">START</a>
 	</div>
 
-	<div id="game">
-		<div id="timer" class="timer"></div>
+	<div id="timer" class="timer"></div>
 
+	<div id="game" class="state">
 		<div class="car car-one"></div>
 		<div class="car car-two"></div>
 
 		<div id="finish-line" class="finish-line"></div>
 	</div>
 
-	<div id="finish-menu" class="center finish-menu">
-		<h1>We have a winner!</h1>
-		<p>Congratulations to <span id="winner"><strong></strong></span></p>
+	<div id="finish-menu" class="state center finish-menu">
+		<h1>GAME OVER</h1>
+		<p id="winner"></p>
 	</div>
 
 	<script src="jquery-1.12.0.js"></script>
 	<script src="car.js"></script>
 	<script src="game.js"></script>
+	<script src="stateManager.js"></script>
 	<script src="main.js"></script>
 	</body>
 </html>

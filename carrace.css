@@ -3,6 +3,20 @@ body {
 	color: #555555;
 }
 
+.button {
+	height: 50px;
+	padding: 5px 10px;
+	background-color: #1abc9c;
+	border-bottom: 3px solid #12ab8d;
+	color: white;
+
+	cursor: pointer;
+}
+
+.state {
+	display: none;
+}
+
 .center {
 	text-align: center;
 }
