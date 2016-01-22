@@ -115,6 +115,7 @@ RACEGAME.Game.prototype = {
         }
         else {
             $("#winner").text("Looks like we have a draw!");
+            $("#winner-photo").attr("src", "");
         }
 
         this.stateManager.setFinish();
