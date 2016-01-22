@@ -8,6 +8,6 @@ RACEGAME.Car.prototype = {
 
 	// updates eneity to move 5px towards right
 	move: function() {
-		
+		console.log("moved");
 	}
 };

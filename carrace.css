@@ -16,14 +16,28 @@ body {
 
 .car-one {
 	background-color: blue;
-	top: 30%;
+	top: 200px;
 }
 
 .car-two {
 	background-color: salmon;
-	top: 50%;
+	top: 400px;
 }
 
-#game {
-	display: none;
+.finish-line {
+	width: 5px;
+	height: 500px;
+	background-color: #777777;
+	position: absolute;
+	top: 50px;
+	right: 80px;
 }
+
+.timer {
+	font-size: 92px;
+	text-align: center;
+}
+
+/*#game {
+	display: none;
+}*/
