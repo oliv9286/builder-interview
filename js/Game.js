@@ -10,6 +10,14 @@ RACEGAME.Game = function(car1Elem, car2Elem, stateManager) {
 
 RACEGAME.Game.prototype = {
 
+    getCar1: function() {
+      return this.car1;
+    },
+
+    getCar2: function() {
+      return this.car2;
+    },
+
     /** initializes game, sets game to the game state
     **/
     start: function() {
@@ -68,7 +76,7 @@ RACEGAME.Game.prototype = {
     update: function() {
 
         var finishline = $("#finish-line");
-        var finishLinePos = finishline.position().left + finishline.width();
+        var finishLinePos = finishline.offset().left + finishline.width();
 
         var car1Pos = this.car1.getPosition();
         var car2Pos = this.car2.getPosition();

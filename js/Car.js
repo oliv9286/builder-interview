@@ -16,7 +16,7 @@ RACEGAME.Car.prototype = {
     /** returns position of car including width offset
     **/
     getPosition: function() {
-        return this.entity.position().left + this.entity.width();
+        return this.entity.offset().left + this.entity.width();
     },
 
     /** gets the name of the car

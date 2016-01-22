@@ -7,8 +7,9 @@ RACEGAME.StateManager = function() {
 RACEGAME.StateManager.prototype = {
 	setStart: function() {
 		$(".state").hide();
+		$("#timer").hide();
 		$("#start-menu").show();
-		$(".car").css({left: "20px"});
+		$(".car").offset({left: 30});
 	},
 
 	setGame: function() {
