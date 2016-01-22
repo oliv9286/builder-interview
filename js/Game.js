@@ -3,17 +3,23 @@ var RACEGAME = RACEGAME || {};
 
 RACEGAME.Game = function(car1Elem, car2Elem, stateManager) {
 
-    this.car1 = new RACEGAME.Car(car1Elem, "Mr. Blob");
-    this.car2 = new RACEGAME.Car(car2Elem, "Mr. Chunky");
+    this.car1 = new RACEGAME.Car(car1Elem, "Mr. Blob", "assets/mrblob.png");
+    this.car2 = new RACEGAME.Car(car2Elem, "Mr. Chunky", "assets/mrchunky.png");
     this.stateManager = stateManager;
 };
 
 RACEGAME.Game.prototype = {
 
+    /**
+    ** returns player 1
+    **/
     getCar1: function() {
       return this.car1;
     },
 
+    /**
+    ** returns player 2
+    **/
     getCar2: function() {
       return this.car2;
     },
@@ -32,7 +38,7 @@ RACEGAME.Game.prototype = {
         var _this = this;
         var down = {};
 
-        $(document).keydown(function(event) {
+        $(document).keydown(function keydownHandler(event) {
 
             var keycode = event.keyCode ? event.keyCode : event.which;
             if (keycode === 65 && down[65] === null) { // A pressed
@@ -47,7 +53,7 @@ RACEGAME.Game.prototype = {
             _this.update();
         });
 
-        $(document).keyup(function(event) {
+        $(document).keyup(function keyUpHandler(event) {
             var keycode = event.keyCode ? event.keyCode : event.which;
             down[keycode] = null;
         });
@@ -59,7 +65,7 @@ RACEGAME.Game.prototype = {
     countdown: function(count) {
         var _this = this;
 
-        var counter = setInterval(function() {
+        var counter = setInterval(function setCountDown() {
             if (count < 0) {
                 clearInterval(counter);
                 _this.addKeypressListener();
@@ -76,7 +82,7 @@ RACEGAME.Game.prototype = {
     update: function() {
 
         var finishline = $("#finish-line");
-        var finishLinePos = finishline.offset().left + finishline.width();
+        var finishLinePos = finishline.position().left + finishline.width();
 
         var car1Pos = this.car1.getPosition();
         var car2Pos = this.car2.getPosition();
@@ -103,12 +109,19 @@ RACEGAME.Game.prototype = {
 
         if (winner) {
             $("#winner").text("Congratulations to " + winner.getName() + " on winning the race!");
+            $("#winner-photo").attr("src", winner.getPhotoURL());
+
+            this.flash($("#winner-photo"));
         }
         else {
             $("#winner").text("Looks like we have a draw!");
         }
 
         this.stateManager.setFinish();
+    },
+
+    flash: function($elem) {
+        $elem.fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
     }
 
 };

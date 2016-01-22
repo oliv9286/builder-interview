@@ -1,6 +1,18 @@
 body {
 	font-family: "Helvetica Neue", "Helvetica", Sans-serif;
 	color: #555555;
+
+	background-image: url("assets/swirl.png");
+	background-repeat: repeat;
+}
+
+.track {
+	width: 70%; /* subtrack the 30% of finish line width */
+	height: 200px;
+	z-index: -1;
+	background-image: url("assets/track.png");
+	background-repeat: repeat-x;
+	margin: 20px 0;
 }
 
 .button {
@@ -48,21 +60,26 @@ body {
 .finish-menu {
 	width: 50%;
 	margin: auto;
-	margin-top: 30%;
 	background-color: #e2a525;
-	padding: 10px;
+	padding: 30px;
 }
 
 .finish-line {
 	width: 10px;
-	height: 400px;
+	height: 420px; /* 400px + 20px offset for margin */
 	background-image: url("assets/finishline.png");
 	position: absolute;
 	top: 140px;
-	right: 80px;
+	right: 30%;
+}
+
+.winner-photo {
+	display: block;
+	margin: auto;
 }
 
 .timer {
 	font-size: 92px;
 	text-align: center;
+	min-height: 110px;
 }

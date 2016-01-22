@@ -7,20 +7,20 @@ RACEGAME.StateManager = function() {
 RACEGAME.StateManager.prototype = {
 	setStart: function() {
 		$(".state").hide();
-		$("#timer").hide();
+		$("#timer").css({"visibility": "hidden"});
 		$("#start-menu").show();
-		$(".car").offset({left: 30});
+		$(".car").css({left: "30px"});
 	},
 
 	setGame: function() {
 		$(".state").hide();
 		$("#game").show();
-		$("#timer").text("").show();
+		$("#timer").text("").css({"visibility" : "visible"});
 	},
 
 	setFinish: function() {
 		$(".state").hide();
-		$("#timer").hide();
+		$("#timer").css({"visibility" : "hidden"});
 		$("#finish-menu").fadeIn();
 	}
 };

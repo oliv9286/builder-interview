@@ -7,26 +7,18 @@ describe("Car", function() {
     $car = $("<div class='car car-one'></div>");
     $("body").append($car);
 
-    Car = new RACEGAME.Car($car, "mycar");
+    Car = new RACEGAME.Car($car, "mycar", "assets/foo.png");
   });
 
   afterEach(function teardown() {
     $car.remove();
   });
-
-  describe("move", function() {
-    it ("should move the car 5px over to the right", function() {
-
-      var originalPos = $car.offset().left;
-      Car.move();
-    });
-  });
-
+  
   describe("getPosition", function() {
     it ("should return the car's current position with the car's width offset", function() {
       var position = Car.getPosition();
 
-      expect(position).toEqual($car1.offset().left + $car1.width();
+      expect(position).toEqual($car.position().left + $car.width());
     });
   });
 
@@ -43,6 +35,14 @@ describe("Car", function() {
       var entity = Car.getEntity();
 
       expect(entity).toEqual($car);
+    });
+  });
+
+  describe("getPhotoURL", function() {
+    it ("should return the asset url", function() {
+      var url = Car.getPhotoURL();
+
+      expect(url).toEqual("assets/foo.png");
     });
   });
 });

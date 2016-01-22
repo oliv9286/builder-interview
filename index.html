@@ -9,7 +9,7 @@
 
   <!--  Start Menu -->
   <div id="start-menu" class="state center">
-    <h1>Monstro Race</h1>
+    <img src="assets/title.png" alt="Monstro Race">
     
     <p>Once upon a time, in a galaxy far far away...</p>
     <p>monsters got too bored of eating people, and decided to race each other for fun</p>
@@ -24,13 +24,18 @@
 
   <!--  Main Game -->
   <div id="game" class="state">
-    <div class="car car-one">
-      <span class="name">Mr.Blob</span>
-    </div>
-    <div class="car car-two">
-      <span class="name">Mr.Chunky</span>
+
+    <div class="track">
+      <div class="car car-one">
+        <span class="name">Mr.Blob</span>
+      </div>
     </div>
 
+    <div class="track">
+      <div class="car car-two">
+        <span class="name">Mr.Chunky</span>
+      </div>
+    </div>
     <div id="finish-line" class="finish-line"></div>
   </div>
 
@@ -38,6 +43,8 @@
   <div id="finish-menu" class="state center finish-menu">
     <h1>GAME OVER</h1>
     <p id="winner"></p>
+
+    <img id="winner-photo" class="winner-photo" src="" alt="winner">
 
     <a class="button" id="restart">PLAY AGAIN</a>
   </div>

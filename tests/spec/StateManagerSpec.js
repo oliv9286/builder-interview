@@ -39,17 +39,17 @@ describe("StateManager", function() {
 
       expect($startMenu.is(":visible")).toBe(true);
       expect($finishMenu.is(":visible")).toBe(false);
-      expect($timer.is(":visible")).toBe(false);
+      expect($timer.css("visibility")).toEqual("hidden");
       expect($mainGame.is(":visible")).toBe(false);
     });
 
     it("should set the initial position of both cars to left 20px", function() {
       StateManager.setStart();
 
-      var car1Offset = $(".car-one").offset().left;
-      var car2Offset = $(".car-two").offset().left;
-      expect(car1Offset).toEqual(30);
-      expect(car2Offset).toEqual(30);
+      var car1Offset = $(".car-one").css("left");
+      var car2Offset = $(".car-two").css("left");
+      expect(car1Offset).toEqual("30px");
+      expect(car2Offset).toEqual("30px");
     });
   });
 
@@ -59,7 +59,7 @@ describe("StateManager", function() {
 
       expect($startMenu.is(":visible")).toBe(false);
       expect($finishMenu.is(":visible")).toBe(false);
-      expect($timer.is(":visible")).toBe(true);
+      expect($timer.css("visibility")).toEqual("visible");
       expect($mainGame.is(":visible")).toBe(true);
 
     });
@@ -67,7 +67,7 @@ describe("StateManager", function() {
     it("should empty timer text and show timer", function() {
       StateManager.setGame();
       expect($timer.text()).toEqual("");
-      expect($timer.is(":visible")).toBe(true);
+      expect($timer.css("visibility")).toBe("visible");
     });
   });
 
@@ -77,7 +77,7 @@ describe("StateManager", function() {
 
       expect($startMenu.is(":visible")).toBe(false);
       expect($finishMenu.is(":visible")).toBe(true);
-      expect($timer.is(":visible")).toBe(false);
+      expect($timer.css("visibility")).toEqual("hidden");
       expect($mainGame.is(":visible")).toBe(false);
     });
   });

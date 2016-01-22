@@ -1,8 +1,9 @@
 var RACEGAME = RACEGAME || {};
 
-RACEGAME.Car = function(elem, name) {
+RACEGAME.Car = function(elem, name, photoURL) {
     this.entity = elem;
     this.name = name;
+    this.photoURL = photoURL;
 };
 
 RACEGAME.Car.prototype = {
@@ -16,7 +17,7 @@ RACEGAME.Car.prototype = {
     /** returns position of car including width offset
     **/
     getPosition: function() {
-        return this.entity.offset().left + this.entity.width();
+        return this.entity.position().left + this.entity.width();
     },
 
     /** gets the name of the car
@@ -29,5 +30,11 @@ RACEGAME.Car.prototype = {
     **/
     getEntity: function() {
         return this.entity;
+    },
+
+    /** returns the car's asset url
+    **/
+    getPhotoURL: function() {
+        return this.photoURL;
     }
 };
