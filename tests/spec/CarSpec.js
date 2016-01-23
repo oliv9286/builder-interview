@@ -13,7 +13,16 @@ describe("Car", function() {
   afterEach(function teardown() {
     $car.remove();
   });
-  
+
+  describe("move", function() {
+    it("should move the car by 5px", function() {
+      var originalPos = $car.position().left;
+      Car.move();
+
+      expect($car.css("left")).toEqual(originalPos + 5 + "px");
+    });
+  });
+
   describe("getPosition", function() {
     it ("should return the car's current position with the car's width offset", function() {
       var position = Car.getPosition();

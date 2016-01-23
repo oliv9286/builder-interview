@@ -3,15 +3,15 @@
 
 $(document).ready(function() {
 
-    var stateManager = new RACEGAME.StateManager();
+  var stateManager = new RACEGAME.StateManager();
 
-    $("#start-game").click(function() {
+  $("#start-game").click(function() {
 
-        var game = new RACEGAME.Game($(".car-one"), $(".car-two"), stateManager);
-        game.start();
-    });
+      var game = new RACEGAME.Game($(".car-one"), $(".car-two"), stateManager);
+      game.start();
+  });
 
-    $("#restart").click(function() {
-        stateManager.setStart();
-    });
+  $("#restart").click(function() {
+      stateManager.setStart();
+  });
 });

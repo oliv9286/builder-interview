@@ -36,8 +36,13 @@ body {
 .car {
 	width: 80px;
 	height: 90px;
-
 	position: absolute;
+
+	-o-transition:.25s;
+	-ms-transition:.25s;
+	-moz-transition:.25s;
+	-webkit-transition:.25s;
+	transition:.25s; 
 }
 
 .car-one {
@@ -76,6 +81,24 @@ body {
 .winner-photo {
 	display: block;
 	margin: auto;
+
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+     opacity: 1;
+  }
+  25%, 75% {
+     opacity: 0;
+  }
+}
+
+.flash {
+  animation-name: flash;
 }
 
 .timer {

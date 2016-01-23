@@ -1,5 +1,8 @@
 var RACEGAME = RACEGAME || {};
 
+/**
+** Constructor for class StateManager
+**/
 RACEGAME.StateManager = function() {
 	this.setStart();
 };
